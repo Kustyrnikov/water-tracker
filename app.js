@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const goalInput = document.getElementById('goalInput');
 const setGoalBtn = document.getElementById('setGoalBtn');
 const goalDisplay = document.getElementById('goalDisplay');
@@ -48,4 +49,13 @@ window.addEventListener('load', () => {
   const savedGoal = localStorage.getItem('dailyGoal');
   if (savedGoal) goalDisplay.textContent = savedGoal;
   loadHistory();
+=======
+const resetBtn = document.getElementById('resetBtn');
+
+resetBtn.addEventListener('click', () => {
+  if (confirm('Удалить все записи за сегодня?')) {
+    localStorage.removeItem('waterEntries');
+    if (typeof loadHistory === 'function') loadHistory();
+  }
+>>>>>>> feature/reset-day
 });
